@@ -16,4 +16,13 @@ public class MediaInfoModel {
 	private Float roger;
 	private boolean prime;
 	private boolean netflix;
+	private String imdbId;
+	private String released;
+	private Integer runtime;
+	private String genre;
+	private String director;
+	private String language;
+	private String actors;
+	private String country;
+	private String awards;
 }

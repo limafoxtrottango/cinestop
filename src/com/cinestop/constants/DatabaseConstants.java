@@ -17,4 +17,13 @@ public class DatabaseConstants {
 	public static final String ROGER = "roger";
 	public static final String PRIME = "prime";
 	public static final String NETFLIX = "netflix";
+	public static final String IMDB_ID = "imdbid";
+	public static final String RELEASED = "released";
+	public static final String RUNTIME = "runtime";
+	public static final String GENRE = "genre";
+	public static final String DIRECTOR = "director";
+	public static final String LANGUAGE = "language";
+	public static final String ACTORS = "actors";
+	public static final String COUNTRY = "country";
+	public static final String AWARDS = "awards";
 }
