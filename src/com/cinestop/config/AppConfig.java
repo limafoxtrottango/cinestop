@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.JstlView;
 public class AppConfig {
 	
 	@Bean(name="viewResolver")
-	UrlBasedViewResolver urlBasedViewResolver() {
+	UrlBasedViewResolver getUrlBasedViewResolverBean() {
 		UrlBasedViewResolver urlBasedViewResolver = new UrlBasedViewResolver();
 		urlBasedViewResolver.setPrefix("/WEB-INF/jsp/");
 		urlBasedViewResolver.setSuffix(".jsp");

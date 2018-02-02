@@ -3,13 +3,13 @@ package com.cinestop.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.cinestop.dao.DBQuery;
+import com.cinestop.helper.MediaInfoHelper;
 
 @Configuration
-public class DbConfig {
+public class MediaInfoHelperConfig {
 	
 	@Bean
-	public DBQuery getDbQueryBean() {
-		return new DBQuery();
+	private MediaInfoHelper getMediaInfoHelperBean() {
+		return new MediaInfoHelper();
 	}
 }

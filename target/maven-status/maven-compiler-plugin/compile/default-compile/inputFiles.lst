@@ -1,2 +1,10 @@
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/controller/HomePageController.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/config/MediaInfoHelperConfig.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/model/MediaInfoModel.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/helper/MediaInfoHelper.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/controller/LandingPageController.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/controller/SearchResourceController.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/config/DbConfig.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/dao/DBQuery.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/constants/DatabaseConstants.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/config/AppConfig.java

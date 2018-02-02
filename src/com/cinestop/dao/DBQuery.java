@@ -30,9 +30,8 @@ public class DBQuery {
 		}
 	}
 
-	public ResultSet getMovieInfo(final String movieName) {
-		String searchQuery = "SELECT * FROM" + DatabaseConstants.MOVIE_TABLE_NAME + "where title =" + "\"" + movieName
-				+ "\"";
+	public ResultSet getMediaInfo(final String name, final String type) {
+		String searchQuery = "SELECT * FROM" + type + "where title =" + "\"" + name + "\"";
 		ResultSet rs;
 		try {
 			rs = stmt.executeQuery(searchQuery);
@@ -41,18 +40,4 @@ public class DBQuery {
 		}
 		return null;
 	}
-
-	public ResultSet getSeriesInfo(final String seriesName) {
-		String searchQuery = "SELECT * FROM" + DatabaseConstants.SERIES_TABLE_NAME + "where title =" + "\"" + seriesName
-				+ "\"";
-		ResultSet rs;
-		try {
-			rs = stmt.executeQuery(searchQuery);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-
 }
