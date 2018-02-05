@@ -14,8 +14,8 @@ public class MediaInfoModel {
 	private Integer tomatometer;
 	private Integer metacritic;
 	private Float roger;
-	private boolean prime;
-	private boolean netflix;
+	private String prime;
+	private String netflix;
 	private String imdbId;
 	private String released;
 	private Integer runtime;
@@ -25,4 +25,5 @@ public class MediaInfoModel {
 	private String actors;
 	private String country;
 	private String awards;
+	private String story;
 }

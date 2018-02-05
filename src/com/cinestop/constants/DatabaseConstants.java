@@ -7,6 +7,9 @@ public class DatabaseConstants {
 	public static final String COMMON_TABLE_NAME = "cinestop_common";
 	public static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	public static final String DB_URL = "jdbc:mysql://localhost/cinestop";
+	public static final String DATABASE = "cinestop";
+	public static final String TABLE = "mediainfo";
+	
 	public static final String NAME = "name";
 	public static final String TYPE = "type";
 	public static final String POSTER = "poster";
@@ -26,4 +29,5 @@ public class DatabaseConstants {
 	public static final String ACTORS = "actors";
 	public static final String COUNTRY = "country";
 	public static final String AWARDS = "awards";
+	public static final String STORY = "story";
 }

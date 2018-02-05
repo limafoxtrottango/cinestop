@@ -24,8 +24,8 @@ public class MediaInfoHelper {
 			Integer tomatometer = rs.getInt(DatabaseConstants.TOMATOMETER);
 			Integer metacritic = rs.getInt(DatabaseConstants.METACRITIC);
 			Float roger = rs.getFloat(DatabaseConstants.ROGER);
-			boolean prime = rs.getBoolean(DatabaseConstants.PRIME);
-			boolean netflix = rs.getBoolean(DatabaseConstants.NETFLIX);
+			String prime = rs.getString(DatabaseConstants.PRIME);
+			String netflix = rs.getString(DatabaseConstants.NETFLIX);
 			String imdbId = rs.getString(DatabaseConstants.IMDB_ID);
 			String released = rs.getString(DatabaseConstants.RELEASED);
 			Integer runtime = rs.getInt(DatabaseConstants.RUNTIME);
@@ -35,12 +35,13 @@ public class MediaInfoHelper {
 			String actors = rs.getString(DatabaseConstants.ACTORS);
 			String country = rs.getString(DatabaseConstants.COUNTRY);
 			String awards = rs.getString(DatabaseConstants.AWARDS);
+			String story = rs.getString(DatabaseConstants.STORY);
 
 			MediaInfoModel mediaInfoModel = MediaInfoModel.builder().name(name).type(type).poster(poster)
 					.imdb_rating(imdb_rating).imdb_votes(imdb_votes).tomatometer(tomatometer).metacritic(metacritic)
 					.roger(roger).prime(prime).netflix(netflix).imdbId(imdbId).released(released).runtime(runtime)
 					.genre(genre).director(director).language(language).actors(actors).country(country).awards(awards)
-					.build();
+					.story(story).build();
 			mediaList.add(mediaInfoModel);
 		}
 		return mediaList;

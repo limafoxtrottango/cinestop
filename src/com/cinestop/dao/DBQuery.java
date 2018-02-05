@@ -26,7 +26,12 @@ public class DBQuery {
 	}
 
 	public ResultSet getMediaInfo(final String name, final String type) throws SQLException {
-		String searchQuery = "SELECT * FROM" + type + "where title =" + "\"" + name + "\"";
+		String searchQuery = "SELECT * FROM " + DatabaseConstants.TABLE + " where name =" + name 
+				+ "and type=" + type;
+		if ("All".equals(type)) {
+			searchQuery = "SELECT * FROM " + DatabaseConstants.TABLE + " where name=" + name;
+		}
+		System.out.println(searchQuery);
 		ResultSet rs = stmt.executeQuery(searchQuery);
 		return rs;
 	}

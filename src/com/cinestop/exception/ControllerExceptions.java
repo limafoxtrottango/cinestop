@@ -31,4 +31,9 @@ public class ControllerExceptions {
 		e.printStackTrace();
 	}
 	
+	@ExceptionHandler(ClassNotFoundException.class)
+	public void handleClassNotFoundException(ClassNotFoundException e) {
+		e.printStackTrace();
+	}
+	
 }
