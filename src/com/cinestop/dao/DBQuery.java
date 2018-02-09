@@ -26,8 +26,8 @@ public class DBQuery {
 	}
 
 	public ResultSet getMediaInfo(final String name, final String type) throws SQLException {
-		String searchQuery = "SELECT * FROM " + DatabaseConstants.TABLE + " where name =" + name 
-				+ "and type=" + type;
+		String searchQuery = "SELECT * FROM " + DatabaseConstants.TABLE + " where name =" + name + "and type="
+				+ type;
 		if ("All".equals(type)) {
 			searchQuery = "SELECT * FROM " + DatabaseConstants.TABLE + " where name=" + name;
 		}

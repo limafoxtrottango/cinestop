@@ -10,4 +10,5 @@
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/constants/DatabaseConstants.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/constants/OmdbAPIConstants.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/dao/DBQuery.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/controller/VotingController.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/config/AppConfig.java
