@@ -13,6 +13,8 @@
 	rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Laila'
 	rel='stylesheet'>
+<link href="<c:url value="/resources/styles/main.css" />"
+	rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -21,13 +23,13 @@
 </head>
 <body>
 	<div style='position: relative; top: 0%; left: 50%'>
-		<div class="alert alert-success" id="upvote-alert" style='z-index: 1; position: absolute'>Up-vote
-			recorded</div>
+		<div class="alert alert-success" id="upvote-alert"
+			style='z-index: 1; position: absolute'>Up-vote recorded</div>
 		<div class="alert alert-warning" id="downvote-alert"
 			style='z-index: 2; position: absolute'>Down-vote recorded</div>
 		<div class="alert alert-danger" id="authentication-alert"
-			style='z-index: 3; position: absolute'>You need to be logged-in to up-vote or
-			down-vote</div>
+			style='z-index: 3; position: absolute'>You need to be logged-in
+			to up-vote or down-vote</div>
 		<div class="alert alert-danger" id="unknown-error-alert"
 			style='z-index: 4; position: absolute'>Some error occurred</div>
 	</div>
@@ -44,7 +46,7 @@
 
 							<div>
 								<div style='z-index: 1; position: absolute'>
-									<img 
+									<img
 										src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGrSURBVGhD7dY/KAZxHMfxE1EWCTFY/BlEiYlNLLKRjWwyiplMokxiJZsyKZtYlEHZTEqkmAz+hEH+vj/DlYTnuXt+d7+Hvu96LT/u7ve75/4FlmVZlmVZlmX9h+pQn+cqkLFxvOexSzQiq6YQbviAU4/OEc7lCs2I1Cy08SN6NOChAqxC87hFG2K1CO3kHp0aSLklODm+zsgKwjPSjrSaQ3hFdGsg1wqxDu1U12gLkm4aOt4T+jTgqiJsQjuP9NSI0QR0nBcMasB1xdiGDqInSS1cN4o3vGJEA0lVij1oMSeogauGoF9BCxnTQNKV4QBazBEqkWsD0CK0z0kNpFU5tAgd+BBaXNx6oZta+5rRQNpV4RiawD502UWtC3q8ah8LGvCVbnh9RmgiuyhBtnXgDtp2WQO+09foBTShLejplqlW3EDbrEEv3ryoCXpZamIb0Ev0p6L8r5d0lq/x21luQNRfz0u67vVNpol+ve51P51Bf9tBlPvJS989iVw84bz0+d0wD1fvHC/14xlagLj6CvBS+P2k77JqDfzlhpHEl7JlWZZlWZaVSkHwAfYqs8zHViqMAAAAAElFTkSuQmCC">
 								</div>
 								<div style='z-index: 2; position: absolute'>

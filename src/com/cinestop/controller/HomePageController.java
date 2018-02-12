@@ -9,6 +9,6 @@ public class HomePageController {
 
 	@RequestMapping("/home")
 	public ModelAndView helloWorld() {
-		return new ModelAndView("home");
+		return new ModelAndView("signUp");
 	}
 }

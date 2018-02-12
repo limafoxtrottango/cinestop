@@ -9,6 +9,7 @@ public class DatabaseConstants {
 	public static final String DB_URL = "jdbc:mysql://localhost/cinestop";
 	public static final String DATABASE = "cinestop";
 	public static final String TABLE = "mediainfo";
+	public static final String USERNAMES_TABLE = "usernames";
 	
 	public static final String NAME = "name";
 	public static final String TYPE = "type";

@@ -25,9 +25,15 @@ public class DBQuery {
 		stmt = conn.createStatement();
 	}
 
+	public ResultSet checkUsernameAvailability(final String username) throws SQLException {
+		String searchQuery = "SELECT * from " + DatabaseConstants.USERNAMES_TABLE + " where username=" + "\"" + username
+				+ "\"";
+		ResultSet rs = stmt.executeQuery(searchQuery);
+		return rs;
+	}
+
 	public ResultSet getMediaInfo(final String name, final String type) throws SQLException {
-		String searchQuery = "SELECT * FROM " + DatabaseConstants.TABLE + " where name =" + name + "and type="
-				+ type;
+		String searchQuery = "SELECT * FROM " + DatabaseConstants.TABLE + " where name =" + name + "and type=" + type;
 		if ("All".equals(type)) {
 			searchQuery = "SELECT * FROM " + DatabaseConstants.TABLE + " where name=" + name;
 		}

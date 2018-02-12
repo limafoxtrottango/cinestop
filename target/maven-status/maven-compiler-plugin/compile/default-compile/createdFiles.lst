@@ -1,11 +1,14 @@
+com/cinestop/model/UserModel.class
 com/cinestop/model/MediaInfoModel$MediaInfoModelBuilder.class
 com/cinestop/model/MediaInfoModel.class
 com/cinestop/controller/LandingPageController.class
 com/cinestop/helper/MediaInfoHelper.class
 com/cinestop/controller/VotingController.class
 com/cinestop/config/MediaInfoHelperConfig.class
+com/cinestop/controller/SignupController.class
 com/cinestop/config/AppConfig.class
 com/cinestop/dao/DBQuery.class
+com/cinestop/model/UserModel$UserModelBuilder.class
 com/cinestop/controller/HomePageController.class
 com/cinestop/config/DbConfig.class
 com/cinestop/constants/DatabaseConstants.class

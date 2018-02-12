@@ -1,0 +1,16 @@
+#form-control-feedback {
+	visibility: hidden;
+}
+
+.set-element-visible {
+	visibility: visible;
+}
+
+
+.bordered-green {
+    border: 1px solid #008000;
+}
+
+.bordered-red {
+    border: 1px solid #FE0000;
+}
