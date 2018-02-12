@@ -2,11 +2,12 @@ package com.cinestop.controller;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,9 +25,9 @@ public class SignupController {
 	}
 	
 	@RequestMapping(value = "/checkUsername", method = RequestMethod.POST)
-	public ResponseEntity<?> checkUserNameAvailability(final String username) throws SQLException, ClassNotFoundException {
+	public ResponseEntity<?> checkUserNameAvailability(@RequestBody List<UserModel> userModel) throws SQLException, ClassNotFoundException {
 		DBQuery dbQuery = new DBQuery();
-		ResultSet rs = dbQuery.checkUsernameAvailability(username);
+		ResultSet rs = dbQuery.checkUsernameAvailability(userModel.get(0).getUserName());
 		if (!rs.isBeforeFirst()) {
 			return new ResponseEntity<Object>(HttpStatus.OK);
 		} else {
@@ -35,7 +36,9 @@ public class SignupController {
 	}
 
 	@RequestMapping(value = "/addNewUser", method = RequestMethod.POST)
-	public ModelAndView registetUser(@ModelAttribute("user") UserModel user) {
-		return new ModelAndView("home");
+	public ResponseEntity<Object> registetUser(@RequestBody List<UserModel> userModel) throws ClassNotFoundException, SQLException {
+		DBQuery dbQuery = new DBQuery();
+		dbQuery.persistSignUpInfo(userModel.get(0));		
+		return new ResponseEntity<Object>(HttpStatus.OK);
 	}
 }

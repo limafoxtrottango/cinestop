@@ -1,11 +1,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>Registration</title>
+<title>Cinestop: Sign-up</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="<c:url value="/resources/styles/main.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/styles/main.css" />"
+	rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -25,9 +26,10 @@
 							<div class="form-group input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-user"></i></span> <input
-									class="form-control" type="text" name='username' id='username'
-									placeholder="Username" /> <span
-									class="form-control-feedback glyphicon glyphicon-ok" id="form-control-feedback"></span>
+									class="form-control" type="text" name='username' id="username"
+									placeholder="Username" data-toggle="popover"
+									data-placement="left" />
+
 							</div>
 							<div class="form-group input-group">
 								<span class="input-group-addon"><i
@@ -39,7 +41,8 @@
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-lock"></i></span> <input
 									class="form-control" type="password" name='password'
-									id='password2' placeholder="Type password again" />
+									id='password2' placeholder="Type password again"
+									data-toggle="popover" data-placement="left" />
 							</div>
 							<div class="form-group input-group">
 								<span class="input-group-addon"><i
@@ -48,8 +51,8 @@
 									placeholder="E-mail id for password recovery" />
 							</div>
 							<div class="form-group">
-								<button id="signup-button" type="button" class="btn btn-def btn-block">Sign
-									Up</button>
+								<button id="signup-button" type="button"
+									class="btn btn-def btn-block">Sign Up</button>
 							</div>
 							<div class="form-group text-center">
 								<a href="#">Forgot Password</a>&nbsp;|&nbsp;<a href="#">Support</a>

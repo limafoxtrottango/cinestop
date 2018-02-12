@@ -14,3 +14,15 @@
 .bordered-red {
     border: 1px solid #FE0000;
 }
+
+#username-home {
+	margin-right: 5px;
+}
+
+#password-home {
+	margin-right: 5px;
+}
+
+#top-row-container {
+	margin-top: 20px;
+}

@@ -7,7 +7,7 @@ function sendAJAXCall(url, parameters, successCallback, errorCallBack){
 		type: 'POST',
 		url: url,
 		data: JSON.stringify(parameters),
-		contentType: 'json',
+		contentType: 'application/json',
 		success: successCallback,
 		error: errorCallBack
 	});

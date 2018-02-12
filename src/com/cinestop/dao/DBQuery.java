@@ -8,6 +8,7 @@ import java.sql.Statement;
 
 import com.cinestop.constants.DatabaseConstants;
 import com.cinestop.model.MediaInfoModel;
+import com.cinestop.model.UserModel;
 
 /**
  * Class that interacts with the database and performs queries
@@ -30,6 +31,15 @@ public class DBQuery {
 				+ "\"";
 		ResultSet rs = stmt.executeQuery(searchQuery);
 		return rs;
+	}
+
+	public void persistSignUpInfo(final UserModel userModel) throws SQLException {
+		String persistQuery = "INSERT into userinfo(username, email, password) VALUES" + "(" + "\""
+				+ userModel.getUserName() + "\"" + "," + "\"" + userModel.getEmail() + "\"" + "," + "\""
+				+ userModel.getPassword() + "\"" + ")";
+		stmt.executeUpdate(persistQuery);
+		persistQuery = "INSERT into usernames(username) VALUES" + "(" + "\"" + userModel.getUserName() + "\"" + ")";
+		stmt.executeUpdate(persistQuery);
 	}
 
 	public ResultSet getMediaInfo(final String name, final String type) throws SQLException {
