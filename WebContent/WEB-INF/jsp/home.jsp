@@ -7,10 +7,13 @@
 	rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="<c:url value="/resources/javascript/utility.js" />"></script>
+<script src="<c:url value="/resources/javascript/home.js" />"></script>
 </head>
 <body>
 
@@ -21,9 +24,10 @@
 				<div class="container">
 					<div class="row">
 						<div class="input-group">
-							<input type="text" class="form-control"
-								placeholder="Search for a movie, a T.V series or both"
-								data-placement="left">
+							<input class="form-control bs-autocomplete"
+								id="home_searchMediaInputText" value=""
+								placeholder="Enter movie or T.V series name" type="text"
+								autocomplete="off">
 							<div class="input-group-append" style="margin-right: 5px">
 								<button class="btn btn-outline-secondary dropdown-toggle"
 									type="button" data-toggle="dropdown" aria-haspopup="true"
@@ -50,12 +54,16 @@
 								type="password" name='password' id="password-home"
 								placeholder="Password" data-toggle="popover"
 								data-placement="left">
-							<button class="btn btn-success" type="submit">Log in</button>
+							<button id="login-home" class="btn btn-success" type="submit">Log
+								in</button>
+							<button id="signup-home" class="btn btn-success" type="submit">Sign
+								Up</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<hr>
 </body>
 </html>

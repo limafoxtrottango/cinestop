@@ -68,4 +68,18 @@ public class DBQuery {
 		String final_query = query_prt1 + query_prt2;
 		stmt.executeUpdate(final_query);
 	}
+
+	public ResultSet getMediaListStartingWithPatternAndOfType(final String startWord, final String type)
+			throws SQLException {
+		String query = "";
+		if (!"All".equals(type)) {
+			query = "SELECT * from mediainfo where name like " + "\"" + startWord + "%" + "\"" + " and type=" + "\"" + type
+					+ "\"";
+		} else {
+			query = "SELECT * from mediainfo where name like " + "\"" + startWord + "\"";
+		}
+		System.out.println(query);
+		ResultSet rs = stmt.executeQuery(query);
+		return rs;
+	}
 }
