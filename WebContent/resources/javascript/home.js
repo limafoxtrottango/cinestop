@@ -1,11 +1,7 @@
 $(document).ready(function() {
 	var url = "/cinestop/getMatchingList";
-	
-	$("home_searchMediaInputText").autocomplete({
-	   
-	});
 	  
-	prefetchMediaList(document.getElementById("home_searchMediaInputText"), 1000, url);
+	prefetchMediaList(document.getElementById("home_searchMediaInputText"), 0, url);
 });
 
 
@@ -42,8 +38,14 @@ function getPayloadAsJSON() {
 	return jsonObj;
 }
 
-function mediaPrefetchSuccess() {
-	
+function mediaPrefetchSuccess(response) {
+	$("#home_searchMediaInputText").autocomplete({
+		source: response,
+		messages: {
+	        noResults: '',
+	        results: function() {}
+	    	}
+		});
 }
 
 function mediaPretechFailure() {

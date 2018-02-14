@@ -16,5 +16,4 @@ com/cinestop/constants/DatabaseConstants.class
 com/cinestop/controller/SearchResourceController.class
 com/cinestop/helper/OmdbAPIHelper.class
 com/cinestop/exception/ControllerExceptions.class
-com/cinestop/model/PrefetchMediaModel$PrefetchMediaModelBuilder.class
 com/cinestop/constants/OmdbAPIConstants.class
