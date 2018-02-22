@@ -11,24 +11,19 @@ public class DatabaseConstants {
 	public static final String TABLE = "mediainfo";
 	public static final String USERNAMES_TABLE = "usernames";
 	
-	public static final String NAME = "name";
-	public static final String TYPE = "type";
-	public static final String POSTER = "poster";
-	public static final String IMDB_RATING = "imdb_rating";
-	public static final String IMDB_VOTES = "imdb_votes";
-	public static final String TOMATOMETER = "tomatometer";
-	public static final String METACRITIC = "metacritic";
-	public static final String ROGER = "roger";
-	public static final String PRIME = "prime";
-	public static final String NETFLIX = "netflix";
-	public static final String IMDB_ID = "imdbid";
-	public static final String RELEASED = "released";
-	public static final String RUNTIME = "runtime";
+	public static final String TITLE = "title";
+	public static final String IMDB_ID = "imdb_id";
+	public static final String TMDB_ID = "tmdb_id";
+	public static final String POSTER = "poster_url";
+	public static final String BACKDROP = "backdrop";
+	public static final String BUDGET = "budget";
 	public static final String GENRE = "genre";
-	public static final String DIRECTOR = "director";
+	public static final String HOMEPAGE = "homepage";
 	public static final String LANGUAGE = "language";
-	public static final String ACTORS = "actors";
-	public static final String COUNTRY = "country";
-	public static final String AWARDS = "awards";
-	public static final String STORY = "story";
+	public static final String PLOT = "plot";
+	public static final String RELEASE = "release_date";
+	public static final String REVENUE = "revenue";
+	public static final String RUNTIME = "runtime";
+	public static final String SPOKEN_LANGUAGES = "languages";
+	public static final String TAGLINE = "tagline";
 }

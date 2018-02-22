@@ -1,10 +1,14 @@
 com/cinestop/model/UserModel.class
 com/cinestop/model/PrefetchMediaModel.class
+com/cinestop/model/ReviewRotTom$ReviewRotTomBuilder.class
 com/cinestop/model/MediaInfoModel$MediaInfoModelBuilder.class
+com/cinestop/model/GenreModel.class
 com/cinestop/model/MediaInfoModel.class
 com/cinestop/controller/LandingPageController.class
+com/cinestop/model/ReviewRogEbe.class
 com/cinestop/helper/MediaInfoHelper.class
 com/cinestop/controller/VotingController.class
+com/cinestop/model/ReviewRotTom.class
 com/cinestop/config/MediaInfoHelperConfig.class
 com/cinestop/controller/SignupController.class
 com/cinestop/config/AppConfig.class
@@ -16,4 +20,5 @@ com/cinestop/constants/DatabaseConstants.class
 com/cinestop/controller/SearchResourceController.class
 com/cinestop/helper/OmdbAPIHelper.class
 com/cinestop/exception/ControllerExceptions.class
+com/cinestop/model/ReviewRogEbe$ReviewRogEbeBuilder.class
 com/cinestop/constants/OmdbAPIConstants.class

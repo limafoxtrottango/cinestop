@@ -41,11 +41,13 @@ function getPayloadAsJSON() {
 function mediaPrefetchSuccess(response) {
 	$("#home_searchMediaInputText").autocomplete({
 		source: response,
+		maxShowItems: 5,
 		messages: {
 	        noResults: '',
 	        results: function() {}
 	    	}
 		});
+	$( "#home_searchMediaInputText" ).autocomplete("widget").addClass("fixedHeight");
 }
 
 function mediaPretechFailure() {

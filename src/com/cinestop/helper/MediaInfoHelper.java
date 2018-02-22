@@ -2,10 +2,12 @@ package com.cinestop.helper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+
+import org.apache.commons.lang.StringEscapeUtils;
 
 import com.cinestop.constants.DatabaseConstants;
 import com.cinestop.model.MediaInfoModel;
+import com.cinestop.model.ReviewRogEbe;
 
 /**
  * Helper class to create a list of media objects from result set
@@ -13,37 +15,34 @@ import com.cinestop.model.MediaInfoModel;
  */
 public class MediaInfoHelper {
 
-	public ArrayList<MediaInfoModel> getQueriedMediaList(final ResultSet rs) throws SQLException {
-		ArrayList<MediaInfoModel> mediaList = new ArrayList<>();
-		while (rs.next()) {
-			String name = rs.getString(DatabaseConstants.NAME);
-			String type = rs.getString(DatabaseConstants.TYPE);
-			String poster = rs.getString(DatabaseConstants.POSTER);
-			Float imdb_rating = rs.getFloat(DatabaseConstants.IMDB_RATING);
-			String imdb_votes = rs.getString(DatabaseConstants.IMDB_VOTES);
-			Integer tomatometer = rs.getInt(DatabaseConstants.TOMATOMETER);
-			Integer metacritic = rs.getInt(DatabaseConstants.METACRITIC);
-			Float roger = rs.getFloat(DatabaseConstants.ROGER);
-			String prime = rs.getString(DatabaseConstants.PRIME);
-			String netflix = rs.getString(DatabaseConstants.NETFLIX);
-			String imdbId = rs.getString(DatabaseConstants.IMDB_ID);
-			String released = rs.getString(DatabaseConstants.RELEASED);
-			Integer runtime = rs.getInt(DatabaseConstants.RUNTIME);
-			String genre = rs.getString(DatabaseConstants.GENRE);
-			String director = rs.getString(DatabaseConstants.DIRECTOR);
-			String language = rs.getString(DatabaseConstants.LANGUAGE);
-			String actors = rs.getString(DatabaseConstants.ACTORS);
-			String country = rs.getString(DatabaseConstants.COUNTRY);
-			String awards = rs.getString(DatabaseConstants.AWARDS);
-			String story = rs.getString(DatabaseConstants.STORY);
+	public MediaInfoModel getQueriedMediaInfoModel(final ResultSet rs) throws SQLException {
+		rs.next();
+		String title = getEscapedString(DatabaseConstants.TITLE, rs);
+		String imdbId = getEscapedString(DatabaseConstants.IMDB_ID, rs);
+		String tmdbId = getEscapedString(DatabaseConstants.TMDB_ID, rs);
+		String poster = "https://image.tmdb.org/t/p/w342" + getEscapedString(DatabaseConstants.POSTER, rs);
+		String backdrop = "https://image.tmdb.org/t/p/w1280" + getEscapedString(DatabaseConstants.BACKDROP, rs);
+		String budget = getEscapedString(DatabaseConstants.BUDGET, rs);
+		String genre = getEscapedString(DatabaseConstants.GENRE, rs);
+		String homepage = getEscapedString(DatabaseConstants.HOMEPAGE, rs);
+		String language = getEscapedString(DatabaseConstants.LANGUAGE, rs);
+		String plot = getEscapedString(DatabaseConstants.PLOT, rs);
+		String release = getEscapedString(DatabaseConstants.RELEASE, rs);
+		String revenue = getEscapedString(DatabaseConstants.REVENUE, rs);
+		// String runtime = getEscapedString(DatabaseConstants.RUNTIME, rs);
+		// String spoken_languages =
+		// getEscapedString(DatabaseConstants.SPOKEN_LANGUAGES, rs);
+		// String tagline = getEscapedString(DatabaseConstants.TAGLINE, rs);
 
-			MediaInfoModel mediaInfoModel = MediaInfoModel.builder().name(name).type(type).poster(poster)
-					.imdb_rating(imdb_rating).imdb_votes(imdb_votes).tomatometer(tomatometer).metacritic(metacritic)
-					.roger(roger).prime(prime).netflix(netflix).imdbId(imdbId).released(released).runtime(runtime)
-					.genre(genre).director(director).language(language).actors(actors).country(country).awards(awards)
-					.story(story).build();
-			mediaList.add(mediaInfoModel);
-		}
-		return mediaList;
+		MediaInfoModel mediaInfoModel = MediaInfoModel.builder().title(title).imdbId(imdbId).tmdbId(tmdbId)
+				.poster(poster).backdrop(backdrop).budget(budget).genre(genre).homepage(homepage).language(language)
+				.plot(plot).release(release).revenue(revenue).build();
+
+		return mediaInfoModel;
 	}
+
+	private String getEscapedString(final String attribute, final ResultSet rs) throws SQLException {
+		return StringEscapeUtils.unescapeHtml(rs.getString(attribute));
+	}
+
 }

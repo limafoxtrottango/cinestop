@@ -5,8 +5,8 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
+import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,10 +16,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cinestop.dao.DBQuery;
 import com.cinestop.helper.MediaInfoHelper;
 import com.cinestop.model.MediaInfoModel;
+import com.cinestop.model.ReviewRogEbe;
 
 @Controller
 public class SearchResourceController {
-
 
 	/**
 	 * Controller to search a movie or series from the database. If not present,
@@ -29,7 +29,7 @@ public class SearchResourceController {
 	 * @param name
 	 * @param type
 	 * @throws SQLException
-	 * @throws ClassNotFoundException 
+	 * @throws ClassNotFoundException
 	 */
 	@RequestMapping(method = RequestMethod.GET, value = "/searchMedia")
 	public ModelAndView searchAndDisplayResource(@RequestParam String name, @RequestParam String type)
@@ -38,15 +38,20 @@ public class SearchResourceController {
 		DBQuery dbQuery = new DBQuery();
 		rs = dbQuery.getMediaInfo(name, type);
 		if (!rs.isBeforeFirst()) {
-		//	String mediaInfoJson = omdbApiHelper.getMediaDetail(name);
-			//parse the json, create the mio and persist
+
 			return null;
 		} else {
 			MediaInfoHelper mediaInfoHelper = new MediaInfoHelper();
-			ArrayList<MediaInfoModel> mediaList = mediaInfoHelper.getQueriedMediaList(rs);
-			System.out.println(mediaList.size());
+			MediaInfoModel mediaInfoModel = mediaInfoHelper.getQueriedMediaInfoModel(rs);
+			ResultSet rs2 = dbQuery.getRogerEbertReviews(mediaInfoModel.getTitle());
+			rs2.next();
+			ReviewRogEbe roger = ReviewRogEbe.builder()
+					.reviewer(StringEscapeUtils.unescapeHtml(rs2.getString("reviewer")))
+					.rating(StringEscapeUtils.unescapeHtml(rs2.getString("rating")))
+					.review(StringEscapeUtils.unescapeHtml(rs2.getString("review"))).build();
 			ModelAndView mav = new ModelAndView("mediainfo");
-			mav.addObject("mediaList",mediaList);
+			mav.addObject("mediaInfo", mediaInfoModel);
+			mav.addObject("roger", roger);
 			return mav;
 		}
 

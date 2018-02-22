@@ -5,13 +5,16 @@
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/model/MediaInfoModel.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/helper/MediaInfoHelper.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/controller/LandingPageController.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/model/GenreModel.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/controller/SearchResourceController.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/model/PrefetchMediaModel.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/model/UserModel.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/controller/SignupController.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/config/DbConfig.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/constants/DatabaseConstants.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/model/ReviewRotTom.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/constants/OmdbAPIConstants.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/dao/DBQuery.java
+/home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/model/ReviewRogEbe.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/controller/VotingController.java
 /home/limafoxtrottango/eclipse-ee/cinestop/src/com/cinestop/config/AppConfig.java

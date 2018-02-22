@@ -6,13 +6,12 @@
 	visibility: visible;
 }
 
-
 .bordered-green {
-    border: 1px solid #008000;
+	border: 1px solid #008000;
 }
 
 .bordered-red {
-    border: 1px solid #FE0000;
+	border: 1px solid #FE0000;
 }
 
 #username-home {
@@ -33,4 +32,28 @@
 
 #top-row-container {
 	margin-top: 14px;
+}
+
+.jumbotron .container {
+	filter: initial;
+	-webkit-filter: initial;
+	background-blend-mode: multiply;
+}
+
+.jumbotron{
+	background-size: cover;
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+}
+
+.fixedHeight {
+	color: rgba(126, 239, 104, 0.8);
+	font-size: 20px;
+	max-height: 200px;
+	max-width: 400px;
+	margin-bottom: 10px;
+	overflow-x: auto;
+	overflow-y: scroll;
+	border:  1px solid rgba(126, 239, 104, 0.8);
+	backgroud: rgba(126, 239, 104, 0.8);
 }

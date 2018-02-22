@@ -1,29 +1,28 @@
 package com.cinestop.model;
 
+import java.util.ArrayList;
+
 import lombok.Builder;
 import lombok.Getter;
 
 @Builder
 @Getter
 public class MediaInfoModel {
-	private String name;
-	private String type;
-	private String poster;
-	private Float imdb_rating;
-	private String imdb_votes;
-	private Integer tomatometer;
-	private Integer metacritic;
-	private Float roger;
-	private String prime;
-	private String netflix;
+	private String title;
 	private String imdbId;
-	private String released;
-	private Integer runtime;
+	private String tmdbId;
+	private String poster;
+	private String backdrop;
+	private String budget;
 	private String genre;
-	private String director;
+	private String homepage;
 	private String language;
-	private String actors;
-	private String country;
-	private String awards;
-	private String story;
+	private String plot;
+	private String release;
+	private String revenue;
+	private ReviewRogEbe rogerEbert;
+	private ArrayList<ReviewRotTom> rottenTomatoes;
+	private String runtime;
+	private String spoken_languages;
+	private String tagline;
 }
