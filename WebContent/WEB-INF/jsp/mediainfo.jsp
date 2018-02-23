@@ -87,13 +87,21 @@
 					</ul>
 					<div class="tab-content clearfix">
 						<div class="tab-pane active" id="1a">
-							<h3>${roger.review}</h3>
+							<div>
+								<div style="background-image: url('https://i.imgur.com/PZaVhRS.gif');background-position: right center;background-repeat:no-repeat;">
+									<h2 style="font-family: 'Aguafina Script'">Reviewer:
+										${roger.reviewer}</h2>
+									<h3 style="font-family: 'Aguafina Script';">Score:
+										${roger.rating}</h3>
+								</div>
+								<div>
+									<pre style="font-family: 'Laila'; white-space: pre-wrap;">${roger.review}</pre>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
 </body>
 </html>
