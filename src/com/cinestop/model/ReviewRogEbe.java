@@ -10,5 +10,6 @@ public class ReviewRogEbe {
 	private String title;
 	private String reviewer;
 	private String rating;
-	private String review;
+	private String review_col_1;
+	private String review_col_2;
 }

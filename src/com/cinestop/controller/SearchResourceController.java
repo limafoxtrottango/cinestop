@@ -45,10 +45,16 @@ public class SearchResourceController {
 			MediaInfoModel mediaInfoModel = mediaInfoHelper.getQueriedMediaInfoModel(rs);
 			ResultSet rs2 = dbQuery.getRogerEbertReviews(mediaInfoModel.getTitle());
 			rs2.next();
+			String rogerReview = rs2.getString("review").toString();
+			int parts = rogerReview.length()/2;
+			String[] reviewParts = rogerReview.split("(?s)(?<=\\G.{"+parts+"})");
+			System.out.println(reviewParts.length);
 			ReviewRogEbe roger = ReviewRogEbe.builder()
 					.reviewer(StringEscapeUtils.unescapeHtml(rs2.getString("reviewer")))
 					.rating(StringEscapeUtils.unescapeHtml(rs2.getString("rating")))
-					.review(StringEscapeUtils.unescapeHtml(rs2.getString("review"))).build();
+					.review_col_1(reviewParts[0])
+					.review_col_2(reviewParts[1])
+					.build();
 			ModelAndView mav = new ModelAndView("mediainfo");
 			mav.addObject("mediaInfo", mediaInfoModel);
 			mav.addObject("roger", roger);

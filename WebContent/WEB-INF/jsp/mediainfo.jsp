@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href='https://fonts.googleapis.com/css?family=Aguafina Script'
@@ -15,11 +16,20 @@
 	rel='stylesheet'>
 <link href="<c:url value="/resources/styles/main.css" />"
 	rel="stylesheet">
+<link rel="stylesheet"
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css"
+	type="text/css" media="all" />
+
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+	type="text/javascript"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"
+	type="text/javascript"></script>
+<script src="<c:url value="/resources/javascript/updown.js" />"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="<c:url value="/resources/javascript/updown.js" />"></script>
+
 </head>
 <body>
 	<div style='position: relative; top: 0%; left: 50%'>
@@ -33,8 +43,9 @@
 		<div class="alert alert-danger" id="unknown-error-alert"
 			style='z-index: 4; position: absolute'>Some error occurred</div>
 	</div>
-	<div class="jumbotron d-flex align-items-center" id="upper-half"
-		style="background-image: url('${mediaInfo.backdrop}');">
+	<div class="d-flex align-items-center" id="upper-half"
+		style="background-image: url('${mediaInfo.backdrop}')">
+		<div class="tint"></div>
 		<div class="container" id="abc">
 			<!-- Left-aligned media object -->
 			<div class="media">
@@ -62,16 +73,17 @@
 					<h5></h5>
 					<h2 class="media-heading"
 						style="font-family: 'Aguafina Script'; font-size: 50px; color: white">${mediaInfo.title}</h2>
-					<h4 class="media-heading" style="font-family: 'Laila'">${mediaInfo.genre},
+					<h4 class="media-heading"
+						style="font-family: 'Laila'; color: white">${mediaInfo.genre},
 						${mediaInfo.runtime} min</h4>
-					<h4 class="media-heading" style="font-family: 'Laila'">${mediaInfo.plot}</h4>
+					<h4 class="media-heading"
+						style="font-family: 'Laila'; color: white">${mediaInfo.plot}</h4>
 					<br>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="tabbable boxed parentTabs">
+	<div class="tabbable boxed parentTabs" id="lower-half">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#reviews">Reviews</a></li>
 			<li><a href="#credits">Credits</a></li>
@@ -88,14 +100,20 @@
 					<div class="tab-content clearfix">
 						<div class="tab-pane active" id="1a">
 							<div>
-								<div style="background-image: url('https://i.imgur.com/PZaVhRS.gif');background-position: right center;background-repeat:no-repeat;">
+								<div
+									style="background-image: url('https://i.imgur.com/PZaVhRS.gif'); background-position: right center; background-repeat: no-repeat;">
 									<h2 style="font-family: 'Aguafina Script'">Reviewer:
 										${roger.reviewer}</h2>
 									<h3 style="font-family: 'Aguafina Script';">Score:
 										${roger.rating}</h3>
 								</div>
-								<div>
-									<pre style="font-family: 'Laila'; white-space: pre-wrap;">${roger.review}</pre>
+								<div class="review-row">
+									<div class="review-col" id="review-col-left">
+										<p style="text-align: justify">${roger.review_col_1}</p>
+									</div>
+									<div class="review-col" id="review-col-right">
+										<p style="text-align: justify">${roger.review_col_2}</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -103,5 +121,6 @@
 				</div>
 			</div>
 		</div>
+	</div>
 </body>
 </html>

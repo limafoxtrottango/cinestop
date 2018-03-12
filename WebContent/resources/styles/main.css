@@ -34,16 +34,29 @@
 	margin-top: 14px;
 }
 
-.jumbotron .container {
-	filter: initial;
-	-webkit-filter: initial;
-	background-blend-mode: multiply;
+.container {
+	-webkit-filter: none !important;
+	z-index: 1;
 }
 
-.jumbotron{
+#upper-half {
 	background-size: cover;
-	filter: grayscale(100%);
-	-webkit-filter: grayscale(100%);
+	background-blend-mode: multiply;
+	position: relative;
+	z-index: -2;
+	padding-bottom: 48px;
+	padding-top: 48px;
+}
+
+.tint {
+	z-index: -1;
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
 }
 
 .fixedHeight {
@@ -54,6 +67,16 @@
 	margin-bottom: 10px;
 	overflow-x: auto;
 	overflow-y: scroll;
-	border:  1px solid rgba(126, 239, 104, 0.8);
-	backgroud: rgba(126, 239, 104, 0.8);
+	border: 1px solid rgba(126, 239, 104, 0.8);
+	background: rgba(126, 239, 104, 0.8);
+}
+
+
+.review-row {
+    display: flex;
+}
+
+.review-col {
+    flex: 50%;
+    padding: 10px;
 }

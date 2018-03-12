@@ -4,6 +4,7 @@ $(document).ready(function() {
 	$("#authentication-alert").hide();
 	$("#unknown-error-alert").hide();
 	
+	
 	$('#cinestop-upvote-img').click(function() {
 		$.ajax({
 			type : "POST",
@@ -30,4 +31,5 @@ $(document).ready(function() {
 			}
 		});
 	});
+
 });

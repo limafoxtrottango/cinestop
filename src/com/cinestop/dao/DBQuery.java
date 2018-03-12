@@ -43,15 +43,15 @@ public class DBQuery {
 	}
 
 	public ResultSet getMediaInfo(final String name, final String type) throws SQLException {
-		
-		String query = "SELECT i.imdb_id,  i.tmdb_id, i.title, a.adult, b.backdrop,  bu.budget, g.genre, h.homepage, l.language, p.plot, po.poster_url, r.release_date, rev.revenue FROM (SELECT * from media_id where title="
+
+		String query = "SELECT i.imdb_id,  i.tmdb_id, i.title, a.adult, b.backdrop,  bu.budget, g.genre, h.homepage, l.language, p.plot, po.poster_url, r.release_date, rev.revenue, run.runtime FROM (SELECT * from media_id where title="
 				+ "\"" + name + "\""
-				+ ") i INNER JOIN media_adult a ON i.imdb_id = a.imdb_id  INNER JOIN media_backdrop b ON b.imdb_id = a.imdb_id INNER JOIN media_budget bu ON bu.imdb_id = b.imdb_id INNER JOIN media_genre g ON g.imdb_id = bu.imdb_id INNER JOIN media_homepage h ON h.imdb_id = g.imdb_id INNER JOIN media_language l ON l.imdb_id = h.imdb_id INNER JOIN media_plot p ON p.imdb_id = l.imdb_id INNER JOIN media_poster po ON po.imdb_id = p.imdb_id INNER JOIN media_release r ON r.imdb_id = po.imdb_id INNER JOIN media_revenue rev ON rev.imdb_id = r.imdb_id";
-		
-		ResultSet rs = stmt.executeQuery(query);	
+				+ ") i INNER JOIN media_adult a ON i.imdb_id = a.imdb_id  INNER JOIN media_backdrop b ON b.imdb_id = a.imdb_id INNER JOIN media_budget bu ON bu.imdb_id = b.imdb_id INNER JOIN media_genre g ON g.imdb_id = bu.imdb_id INNER JOIN media_homepage h ON h.imdb_id = g.imdb_id INNER JOIN media_language l ON l.imdb_id = h.imdb_id INNER JOIN media_plot p ON p.imdb_id = l.imdb_id INNER JOIN media_poster po ON po.imdb_id = p.imdb_id INNER JOIN media_release r ON r.imdb_id = po.imdb_id INNER JOIN media_revenue rev ON rev.imdb_id = r.imdb_id INNER JOIN media_runtime run ON run.imdb_id = r.imdb_id";
+
+		ResultSet rs = stmt.executeQuery(query);
 		return rs;
 	}
-	
+
 	public ResultSet getRogerEbertReviews(final String title) throws SQLException {
 		String query = "SELECT * from media_reviews_re where title=" + "\"" + title + "\"";
 		System.out.println(query);
