@@ -71,12 +71,17 @@
 	background: rgba(126, 239, 104, 0.8);
 }
 
-
 .review-row {
-    display: flex;
+	display: flex;
 }
 
 .review-col {
-    flex: 50%;
-    padding: 10px;
+	flex: 50%;
+	padding: 10px;
+}
+
+#idc-container-parent #idc-container .idc-c-h {
+	background: #f6f6f6;
+	border-top: 1px solid #ddd;
+	padding: 3px 0 0;
 }
