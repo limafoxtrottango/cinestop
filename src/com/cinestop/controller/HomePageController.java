@@ -1,21 +1,8 @@
 package com.cinestop.controller;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.cinestop.dao.DBQuery;
-import com.cinestop.helper.MediaInfoHelper;
-import com.cinestop.model.MediaInfoModel;
-import com.cinestop.model.PrefetchMediaModel;
 
 @Controller
 public class HomePageController {
