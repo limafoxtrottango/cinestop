@@ -1,0 +1,103 @@
+#form-control-feedback {
+	visibility: hidden;
+}
+
+.set-element-visible {
+	visibility: visible;
+}
+
+.bordered-green {
+	border: 1px solid #008000;
+}
+
+.bordered-red {
+	border: 1px solid #FE0000;
+}
+
+#username-home {
+	margin-right: 5px;
+}
+
+#password-home {
+	margin-right: 5px;
+}
+
+#login-home {
+	margin-right: 5px;
+}
+
+#signup-home {
+	margin-right: 5px;
+}
+
+#top-row-container {
+	margin-top: 14px;
+}
+
+.container {
+	-webkit-filter: none !important;
+	z-index: 1;
+}
+
+#upper-half {
+	background-size: cover;
+	background-blend-mode: multiply;
+	position: relative;
+	z-index: -2;
+	padding-bottom: 48px;
+	padding-top: 48px;
+}
+
+.tint {
+	z-index: -1;
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.fixedHeight {
+	color: rgba(126, 239, 104, 0.8);
+	font-size: 20px;
+	max-height: 200px;
+	max-width: 400px;
+	margin-bottom: 10px;
+	overflow-x: auto;
+	overflow-y: scroll;
+	border: 1px solid rgba(126, 239, 104, 0.8);
+	background: rgba(126, 239, 104, 0.8);
+}
+
+.review-row {
+	display: flex;
+}
+
+.review-col {
+	flex: 50%;
+	padding: 10px;
+}
+
+
+.cover-container {
+    height: 180px;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.cover-item {
+    position: relative;
+    display: inline-block;
+    margin: 8px 8px;
+    box-shadow: 2px 2px 4px #bbb;
+    border-top-right-radius: 4px;
+    width: 116px;
+    height: 158px;
+    vertical-align: bottom;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
