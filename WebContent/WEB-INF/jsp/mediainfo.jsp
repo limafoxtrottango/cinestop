@@ -32,8 +32,11 @@
 	type="text/javascript"></script>
 <script src="<c:url value="/resources/javascript/updown.js" />"></script>
 <script
+	src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.3/jquery.jqgrid.min.js"></script>
+<script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script src="<c:url value="/resources/javascript/utility.js" />"></script>
+<script src="<c:url value="/resources/javascript/mediaInfo.js" />"></script>
 </head>
 <body>
 	<div style='position: relative; top: 0%; left: 50%'>
@@ -76,10 +79,26 @@
 				<div class="media-body">
 					<h5></h5>
 					<p class="media-heading"
-						style="font-family: 'Aguafina Script'; font-size: 50px; color: white">${mediaInfo.title}</p>
-					<p style="font-family: 'Laila'; color: white; text-align: justify">${mediaInfo.genre},
-						${mediaInfo.runtime} min</p>
+						style="font-family: 'Aguafina Script'; font-size: 40px; color: white">${mediaInfo.title}</p>
+					<p class="media-heading"
+						style="font-family: 'Aguafina Script'; font-size: 20px; color: yellow">${mediaInfo.tagline}</p>
+					<p style="font-family: 'Laila'; color: white; text-align: justify">
+						<c:forEach items="${mediaInfo.genres}" var="genre">
+							${genre}, 
+						</c:forEach>
+						${mediaInfo.runtime} min
+					</p>
 					<p style="font-family: 'Laila'; color: white; text-align: justify">${mediaInfo.plot}</p>
+					<p style="font-family: 'Laila'; color: white; text-align: justify">Release
+						date: ${mediaInfo.release}</p>
+					<p style="font-family: 'Laila'; color: white; text-align: justify">Language:
+						${mediaInfo.language}</p>
+					<p style="font-family: 'Laila'; color: white; text-align: justify">Budget:
+						${mediaInfo.budget}M USD</p>
+					<p style="font-family: 'Laila'; color: white; text-align: justify">Reveue:
+						${mediaInfo.revenue}M USD</p>
+					<p style="font-family: 'Laila'; color: white; text-align: justify">Homepage:
+						${mediaInfo.homepage}</p>
 					<br>
 				</div>
 			</div>
@@ -87,17 +106,17 @@
 	</div>
 	<div class="tabbable boxed parentTabs" id="lower-half">
 		<ul class="nav nav-pills">
-			<li class="nav-item"><a data-toggle="tab"
+			<li class="nav-item active"><a data-toggle="tab"
 				class="nav-link active" href="#reviews">Reviews</a></li>
 			<li class="nav-item"><a data-toggle="tab" class="nav-link"
-				href="#">Credits</a></li>
+				href="#credits">Credits</a></li>
 			<li class="nav-item"><a data-toggle="tab" class="nav-link"
 				href="#">Trivia</a></li>
 			<li class="nav-item"><a data-toggle="tab" class="nav-link"
 				href="#discussion">Discussion</a></li>
 		</ul>
 		<div class="tab-content">
-			<div class="tab-pane fade active in" id="reviews">
+			<div class="tab-pane fade active" id="reviews">
 				<div class="tabbable">
 					<ul class="nav nav-pills">
 						<li class="active"><a href="#roger-ebert">Roger Ebert</a></li>
@@ -115,12 +134,58 @@
 								</div>
 								<div class="review-row">
 									<div class="review-col" id="review-col-left">
-										<p style="text-align: justify">${roger.review_col_1}</p>
+										<p style="text-align: justify">${mediaInfo.rogerEbert.review_col_1}</p>
 									</div>
 									<div class="review-col" id="review-col-right">
-										<p style="text-align: justify">${roger.review_col_2}</p>
+										<p style="text-align: justify">${mediaInfo.rogerEbert.review_col_2}</p>
 									</div>
 								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="credits">
+				<div class="tabbable">
+					<ul class="nav nav-pills">
+						<li data-toggle="tab" class="active"><a href="#cast">Cast</a></li>
+						<li data-toggle="tab" class="crew"><a href="#crew">Crew</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active">
+							<div class="row">
+								<c:forEach items="${mediaInfo.cast}" var="cast">
+									<div class="col-md-1">
+										<p
+											style="font-family: 'Laila'; color: black; text-align: justify">${cast.name}</p>
+
+										<c:choose>
+											<c:when test="${cast.profile_path == 'https://image.tmdb.org/t/p/w138_and_h175_facenull'}">
+												<img src="https://i.imgur.com/uEihXl9.jpg"
+													style="border-radius: 5px">
+											</c:when>
+											<c:otherwise>
+												<img src="${cast.profile_path}" style="border-radius: 5px">
+											</c:otherwise>
+										</c:choose>
+
+										<p
+											style="font-family: 'Laila'; color: black; text-align: justify">${cast.character_name}</p>
+									</div>
+								</c:forEach>
+							</div>
+						</div>
+						<div class="tab-pane fade in">
+							<div class="row">
+								<c:forEach items="${mediaInfo.crew}" var="crew">
+									<div class="col-md-2">
+										<img src="${crew.profile_path}">
+										<p
+											style="font-family: 'Laila'; color: black; text-align: justify">${crew.job}</p>
+										<p
+											style="font-family: 'Laila'; color: black; text-align: justify">${crew.name}</p>
+									</div>
+								</c:forEach>
 							</div>
 						</div>
 					</div>

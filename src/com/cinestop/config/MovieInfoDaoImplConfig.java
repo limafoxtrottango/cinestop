@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.cinestop.constants.DatabaseConstants;
+import com.cinestop.constants.CinestopConstants;
 import com.cinestop.dao.MovieInfoDaoImpl;
 
 @Configuration
@@ -18,9 +18,9 @@ public class MovieInfoDaoImplConfig {
 	@Primary
 	public DataSource dataSourceBean() {
 		DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-		dataSourceBuilder.url(DatabaseConstants.DB_URL);
-		dataSourceBuilder.username(DatabaseConstants.DATABASE_USERNAME);
-		dataSourceBuilder.password(DatabaseConstants.DATABASE_PASSWORD);
+		dataSourceBuilder.url(CinestopConstants.DB_URL);
+		dataSourceBuilder.username(CinestopConstants.DATABASE_USERNAME);
+		dataSourceBuilder.password(CinestopConstants.DATABASE_PASSWORD);
 		return dataSourceBuilder.build();
 	}
 

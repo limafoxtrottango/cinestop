@@ -6,8 +6,7 @@ function sendAJAXCall(url, parameters, successCallback, errorCallBack){
 	$.ajax({
 		type: 'POST',
 		url: url,
-		data: JSON.stringify(parameters),
-		contentType: 'application/json',
+		data: { cinestopId: "npM1Zb"},
 		success: successCallback,
 		error: errorCallBack
 	});
