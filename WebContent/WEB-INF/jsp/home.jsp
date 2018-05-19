@@ -16,6 +16,8 @@
 	rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Laila'
 	rel='stylesheet'>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script
@@ -46,7 +48,7 @@
 										class="dropdown-item" href="#">All</a>
 								</div>
 							</div>
-							<button class="btn btn-info" type="submit">Search</button>
+							<button class="btn btn-info" type="submit" id="searchbutton">Search</button>
 						</div>
 					</div>
 				</div>
@@ -71,9 +73,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<hr>
-	<div class="container-fluid">
+		<hr>
 		<div class="row">
 			<div id="netflix-toggle"
 				style="width: 60px; margin-left: 10px; margin-right: 10px">
@@ -129,10 +129,19 @@
 					</ul>
 					<label style="font-family: 'Laila'">Genre </label>
 				</div>
-
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div id="movie-fetch-waiting">
+				<label style="font-family: 'Laila'">Fetching movies</label> <i
+					class="fa fa-circle-o-notch fa-spin row" style="font-size: 12px"></i>
+			</div>
+			<div id="matching-movie-list-div">
+				<ul id="matching-movies-list">
+				</ul>
 			</div>
 		</div>
 	</div>
-	<hr>
 </body>
 </html>

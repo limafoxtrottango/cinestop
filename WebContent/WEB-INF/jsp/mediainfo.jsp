@@ -4,7 +4,7 @@
 <body>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<%@page pageEncoding="UTF-8"%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet"
@@ -37,6 +37,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="<c:url value="/resources/javascript/utility.js" />"></script>
 <script src="<c:url value="/resources/javascript/mediaInfo.js" />"></script>
+<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div style='position: relative; top: 0%; left: 50%'>
@@ -50,38 +51,22 @@
 		<div class="alert alert-danger" id="unknown-error-alert"
 			style='z-index: 4; position: absolute'>Some error occurred</div>
 	</div>
+	<div style="position: absolute">
+		<p class="media-heading"
+			style="font-family: 'Berkshire Swash'; font-size: 20px; color: yellow">${mediaInfo.tagline}</p>
+	</div>
 	<div class="d-flex align-items-center" id="upper-half"
 		style="background-image: url('${mediaInfo.backdrop}')">
 		<div class="tint"></div>
 		<div class="container" id="abc">
 			<!-- Left-aligned media object -->
-			<div class="media">
-				<input type="hidden" id="mediaName" value="${mediaInfo.title}">
-				<div class="media-left" style="position: relative"">
-					<img
-						src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHjSURBVGhD7dhNSFRRHEDx6QOJKFoJIkItbBUFIVKItNAgEBeCtHARLVq0DIJWgqi0iCBx4SIiCBSCQAkERRCRVgWBQdSqTVBQRESQIlJ+nBPzYBYxzOh7zhv6H/ghc9F372XmvsdYiKIoiqIo+j87WPxZ1x3BIq7/fVWnNWAW2/iDq6i7DuEZ3MRq8ecGelE3HcATuPgfOIfR4ut1dCP3uYkJuOifuICkMTi+hg4H8tx9JIu95EBJbvIRkk22IZcNwUV6Fq448I88O1Pw977hLHLVbbi43+hzoExuZgb+/he0IhfdxBa8xQ44UEHemufhZj7hJGraNWzCjdxwoIqOYhlu5gOaUZP64bvgQm45sIuO4xW8xjs0Yl/rgYfaBQw6sIdO4A281krx9b7UBW+vTnzXgRTynXgPr/kSx5BpF/ELTjjuQIq1wLPitZfgGcqk8/BB5kSP4QMu7U7Bu5hzzMG7W6qdgQ8wJ3gKnwVZdRpf4VzTSG0uH1if4YWf4zCyzif+dzjnJPb85czP7Ud4wQWk/laXqR3JR/khdv1RbkJy+F4gs8NXpk4kd8gHDlSbt8O38AKeDR9+l2vkHlyHRlBxPpBeI/njvLmDihqG/zDIs9IvbFEURVEURVEURTWsUNgBmtCzxB/KaMAAAAAASUVORK5CYII=">
-
-					<div>
-						<div>
-							<img
-								src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGrSURBVGhD7dY/KAZxHMfxE1EWCTFY/BlEiYlNLLKRjWwyiplMokxiJZsyKZtYlEHZTEqkmAz+hEH+vj/DlYTnuXt+d7+Hvu96LT/u7ve75/4FlmVZlmVZlmX9h+pQn+cqkLFxvOexSzQiq6YQbviAU4/OEc7lCs2I1Cy08SN6NOChAqxC87hFG2K1CO3kHp0aSLklODm+zsgKwjPSjrSaQ3hFdGsg1wqxDu1U12gLkm4aOt4T+jTgqiJsQjuP9NSI0QR0nBcMasB1xdiGDqInSS1cN4o3vGJEA0lVij1oMSeogauGoF9BCxnTQNKV4QBazBEqkWsD0CK0z0kNpFU5tAgd+BBaXNx6oZta+5rRQNpV4RiawD502UWtC3q8ah8LGvCVbnh9RmgiuyhBtnXgDtp2WQO+09foBTShLejplqlW3EDbrEEv3ryoCXpZamIb0Ev0p6L8r5d0lq/x21luQNRfz0u67vVNpol+ve51P51Bf9tBlPvJS989iVw84bz0+d0wD1fvHC/14xlagLj6CvBS+P2k77JqDfzlhpHEl7JlWZZlWZaVSkHwAfYqs8zHViqMAAAAAElFTkSuQmCC">
-						</div>
-						<div>
-							<img id="cinestop-upvote-img"
-								src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFSSURBVGhD7ZUxTgMxEEUX0dFTUK2NaHMAWg4BN4iUk1CjYAdqUtFxi9yBkgMQbAkJCcl4oikQmWKzO/au0H/S75L5f6MkrwEAAAAAAAC0Dx+Xxof5lEKbeF53Lu7CqfHx1fqYphDaQpt43mGY+882fxJv0uGaoQ20hWf1wy7jzLi4lQpqZNe9jDOeM4xzH6+MC19SUclQJ3XzDB3MKl5bF76lwiLJXdTJ9bpYHxZiaZGEBdeWIX9nb+VivVAH1xUkpaP8L/IkDdAI3aYObivMczq2Lr5IQwYl36Tb3FKHs8d0kss3e2P6Z0M3+XxdtOw/yNpatKt3M8T+9F66wefGpa/9Va2txaH2L2JtLfInfNPJ/mTt/Fp+2zTpZv/C1taCzCw/wO53UcHaWpD9XVjvP0RY17O2Fn/tP4a1tfhl//GsrQUZe3RrAwAAAAAA8I9omh+JpnWVeC/6OAAAAABJRU5ErkJggg==">
-						</div>
-					</div>
+			<div class="row">
+				<div class="col-md-4">
+					<img src="${mediaInfo.poster}" class="img-responsive" style="border-radius: 5px">
 				</div>
-				<div class="media-left">
-					<img src="${mediaInfo.poster}" class="class="
-						img-responsive" style="background-blend-mode: lighten;">
-				</div>
-				<div class="media-body">
-					<h5></h5>
+				<div class="col-md-8">
 					<p class="media-heading"
-						style="font-family: 'Aguafina Script'; font-size: 40px; color: white">${mediaInfo.title}</p>
-					<p class="media-heading"
-						style="font-family: 'Aguafina Script'; font-size: 20px; color: yellow">${mediaInfo.tagline}</p>
+						style="font-family: 'Aguafina Script'; font-size: 40px; color: pink">${mediaInfo.title}</p>
 					<p style="font-family: 'Laila'; color: white; text-align: justify">
 						<c:forEach items="${mediaInfo.genres}" var="genre">
 							${genre}, 
@@ -94,9 +79,26 @@
 					<p style="font-family: 'Laila'; color: white; text-align: justify">Language:
 						${mediaInfo.language}</p>
 					<p style="font-family: 'Laila'; color: white; text-align: justify">Budget:
-						${mediaInfo.budget}M USD</p>
+						${mediaInfo.budget}</p>
 					<p style="font-family: 'Laila'; color: white; text-align: justify">Reveue:
-						${mediaInfo.revenue}M USD</p>
+						${mediaInfo.revenue}</p>
+					<div class="row">
+						<div class="col-md-1">
+							<img style="border-radius: 2px"
+								src="https://i.imgur.com/qJgKouM.jpg">
+						</div>
+						<div class="col-md-4">
+							<p
+								style="font-family: 'Laila'; color: white; text-align: justify; margin-top: 5px !important">
+								${mediaInfo.imdbRating}/10.0 based on ${mediaInfo.imdbVotes}
+								votes</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-1">
+							<img src="https://i.imgur.com/K7QJgaF.jpg">
+						</div>
+					</div>
 					<p style="font-family: 'Laila'; color: white; text-align: justify">Homepage:
 						${mediaInfo.homepage}</p>
 					<br>
@@ -148,11 +150,13 @@
 			<div class="tab-pane fade" id="credits">
 				<div class="tabbable">
 					<ul class="nav nav-pills">
-						<li data-toggle="tab" class="active"><a href="#cast">Cast</a></li>
-						<li data-toggle="tab" class="crew"><a href="#crew">Crew</a></li>
+						<li class="nav-item active"><a data-toggle="tab"
+							class="nav-link" href="#cast">Cast</a></li>
+						<li class="nav-item"><a data-toggle="tab" class="nav-link"
+							href="#crew">Crew</a></li>
 					</ul>
 					<div class="tab-content">
-						<div class="tab-pane active">
+						<div class="tab-pane active" id="cast">
 							<div class="row">
 								<c:forEach items="${mediaInfo.cast}" var="cast">
 									<div class="col-md-1">
@@ -160,7 +164,8 @@
 											style="font-family: 'Laila'; color: black; text-align: justify">${cast.name}</p>
 
 										<c:choose>
-											<c:when test="${cast.profile_path == 'https://image.tmdb.org/t/p/w138_and_h175_facenull'}">
+											<c:when
+												test="${cast.profile_path == 'https://image.tmdb.org/t/p/w138_and_h175_facenull'}">
 												<img src="https://i.imgur.com/uEihXl9.jpg"
 													style="border-radius: 5px">
 											</c:when>
@@ -175,11 +180,20 @@
 								</c:forEach>
 							</div>
 						</div>
-						<div class="tab-pane fade in">
+						<div class="tab-pane fade in" id="crew">
 							<div class="row">
 								<c:forEach items="${mediaInfo.crew}" var="crew">
-									<div class="col-md-2">
-										<img src="${crew.profile_path}">
+									<div class="col-md-1">
+										<c:choose>
+											<c:when
+												test="${crew.profile_path == 'https://image.tmdb.org/t/p/w138_and_h175_facenull'}">
+												<img src="https://i.imgur.com/uEihXl9.jpg"
+													style="border-radius: 5px">
+											</c:when>
+											<c:otherwise>
+												<img src="${crew.profile_path}" style="border-radius: 5px">
+											</c:otherwise>
+										</c:choose>
 										<p
 											style="font-family: 'Laila'; color: black; text-align: justify">${crew.job}</p>
 										<p

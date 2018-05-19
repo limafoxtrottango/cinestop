@@ -1,6 +1,5 @@
 package com.cinestop.constants;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,8 +32,25 @@ public class CinestopConstants {
 	public static final String TAGLINE = "tagline";
 
 	public static final Map<String, String> GENRE_MAP;
+	public static final Map<String, String> MONTH_MAP;
+	public static final Map<String, String> METERCLASS_MAP;
 
 	static {
+		Map<String, String> month_map = new HashMap<String, String>();
+		month_map.put("01", "January");
+		month_map.put("02", "Febuary");
+		month_map.put("03", "March");
+		month_map.put("04", "April");
+		month_map.put("05", "May");
+		month_map.put("06", "June");
+		month_map.put("07", "July");
+		month_map.put("08", "August");
+		month_map.put("09", "September");
+		month_map.put("10", "October");
+		month_map.put("11", "November");
+		month_map.put("12", "December");
+		MONTH_MAP = Collections.unmodifiableMap(month_map);
+
 		Map<String, String> genre_map = new HashMap<String, String>();
 		genre_map.put("28", "Action");
 		genre_map.put("12", "Adventure");
@@ -56,6 +72,11 @@ public class CinestopConstants {
 		genre_map.put("10752", "War");
 		genre_map.put("37", "Western");
 		GENRE_MAP = Collections.unmodifiableMap(genre_map);
-	}
 
+		Map<String, String> meterclass_map = new HashMap<String, String>();
+		meterclass_map.put("fresh", "Fresh");
+		meterclass_map.put("rotten", "Rotten");
+		meterclass_map.put("certified_fresh", "Certified Fresh");
+		METERCLASS_MAP = Collections.unmodifiableMap(meterclass_map);
+	}
 }

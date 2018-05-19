@@ -56,7 +56,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(20, 10, 10, 0.9);
 }
 
 .fixedHeight {
@@ -80,24 +80,45 @@
 	padding: 10px;
 }
 
-
 .cover-container {
-    height: 180px;
-    width: 100%;
-    white-space: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
+	height: 180px;
+	width: 100%;
+	white-space: nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
 }
+
 .cover-item {
-    position: relative;
-    display: inline-block;
-    margin: 8px 8px;
-    box-shadow: 2px 2px 4px #bbb;
-    border-top-right-radius: 4px;
-    width: 116px;
-    height: 158px;
-    vertical-align: bottom;
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: cover;
+	position: relative;
+	display: inline-block;
+	margin: 8px 8px;
+	box-shadow: 2px 2px 4px #bbb;
+	border-top-right-radius: 4px;
+	width: 116px;
+	height: 158px;
+	vertical-align: bottom;
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#movie-fetch-waiting {
+	visibility: hidden;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#movie-fetch-waiting {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);	
+}
+
+#matching-movie-list-div {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%,0%);
 }

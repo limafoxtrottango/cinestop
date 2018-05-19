@@ -23,11 +23,15 @@ public class MovieInfoModel {
 	private String budget;
 	private List<String> genres;
 	private String homepage;
+	private String imdbRating;
+	private String imdbVotes;
 	private String language;
 	private String plot;
 	private String release;
 	private String revenue;
 	private RogerEbertModel rogerEbert;
+	private String meterclass;
+	private String meterscore;
 	private String runtime;
 	private String spoken_languages;
 	private String tagline;

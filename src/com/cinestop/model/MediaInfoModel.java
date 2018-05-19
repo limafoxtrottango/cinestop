@@ -22,6 +22,8 @@ public class MediaInfoModel {
 	private String revenue;
 	private ReviewRogEbe rogerEbert;
 	private ArrayList<ReviewRotTom> rottenTomatoes;
+	private String meterclass;
+	private String meterscore;
 	private String runtime;
 	private String spoken_languages;
 	private String tagline;
