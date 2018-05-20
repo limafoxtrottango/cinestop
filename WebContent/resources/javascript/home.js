@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$("#searchbutton").click(function() {
 		document.getElementById("movie-fetch-waiting").style.visibility = "visible";
-		document.getElementById("matching-movies-list").innerHTML = "";
+		document.getElementById("matching-movie-list-div").innerHTML = "";
 		$.ajax({
 			type: "POST",
 			url: "/cinestop/searchMovie",
@@ -25,26 +25,40 @@ function matchingMoviesFetchSuccess(response) {
 	var ul = document.getElementById("matching-movies-list");
 	for( var i = 0; i < response.length; i++ ) {
 		var data = response[i];
-		var li = document.createElement("li");
-		var poster = document.createElement('img');
-		poster.src = data.poster;																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																											
-		//poster.wrap("<a href='http://localhost:8080/cinestop/searchMoviea?cinestopId=" + data.cinestopId + "'</a>");
-		
-		var a = document.createElement("a");
-		a.setAttribute('href', "http://localhost:8080/cinestop/searchMoviea?cinestopId=" + data.cinestopId);
-		li.appendChild(a);
-		li.appendChild(poster);
-		li.appendChild(document.createTextNode(data.title));
-		li.appendChild(document.createTextNode(data.release));
-		li.style.border = "thick solid black";
-		ul.appendChild(li);
-	}//for( var j = 0; j < data.length; j++ ) { 
-	//	var o = data[j];
-	//	var li = document.createElement("li");
-	//	alert(o.title);
-	//	li.appendChild(document.createTextNode(o.title));
-	//	ul.appendChild(li);
-	//}
+		var poster = document.createElement("img");
+		poster.setAttribute("src", data.poster);
+	    poster.setAttribute("alt", "Poster");
+	    
+	    var a = document.createElement("a");
+	    a.setAttribute("href", "#");
+	    a.appendChild(poster);
+	    
+	    var media = document.createElement('div');
+	    media.className = "media";
+	    
+	    var media_left_media_middle = document.createElement('div');
+	    media_left_media_middle.className = "media_left media_middle";
+	    media_left_media_middle.append(a);
+	    
+	    media.append(media_left_media_middle);
+	    
+	    var title = document.createElement("h4");
+	    title.className = "media-heading";
+	    title.style.fontFamily = "Aguafina Script";
+	    
+	    var t = document.createTextNode(data.title);
+	    title.append(t);
+	    
+	    var media_body = document.createElement('div');
+	    media_body.className = "media-body";
+	    
+	    media_body.append(title);
+	    
+	    media.append(media_body);
+	    
+	    document.getElementById("matching-movie-list-div").append(media); 
+	    document.getElementById("matching-movie-list-div").append(document.createElement('br'));
+	}
 }
 
 function matchingMoviesFetchFailure(response) {

@@ -18,6 +18,8 @@
 	rel='stylesheet'>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Aguafina Script'
+	rel='stylesheet'>
 <script
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script
@@ -138,8 +140,6 @@
 					class="fa fa-circle-o-notch fa-spin row" style="font-size: 12px"></i>
 			</div>
 			<div id="matching-movie-list-div">
-				<ul id="matching-movies-list">
-				</ul>
 			</div>
 		</div>
 	</div>
