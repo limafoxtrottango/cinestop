@@ -16,6 +16,8 @@
 	rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Laila'
 	rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Laila'
+	rel='stylesheet'>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Aguafina Script'
@@ -139,8 +141,7 @@
 				<label style="font-family: 'Laila'">Fetching movies</label> <i
 					class="fa fa-circle-o-notch fa-spin row" style="font-size: 12px"></i>
 			</div>
-			<div id="matching-movie-list-div">
-			</div>
+			<div id="matching-movie-list-div"></div>
 		</div>
 	</div>
 </body>

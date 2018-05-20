@@ -111,14 +111,16 @@ public class MovieInfoDaoImpl implements MovieInfoDao {
 
 	@Override
 	public List<MovieInfoModelList> getMovieInfoForListing(String queriedMovie) {
-		String query = "SELECT title,cinestopId,poster,release_date FROM movie_data_primary where title like \"%" + queriedMovie
-				+ "%\"";
+		String query = "SELECT title,cinestopId,poster,release_date,plot,runtime FROM movie_data_primary where title like \"%"
+				+ queriedMovie + "%\" ORDER BY imdbRatings desc";
 		final List<Map<String, Object>> rows = jdbcTemplate.queryForList(query);
 		MovieInfoModelListBuilder movieInfoModelListBuilder = MovieInfoModelList.builder();
 		List<MovieInfoModelList> movieInfoList = new ArrayList<>();
+		List<String> genres = new ArrayList<>();
 		for (Map<String, Object> row : rows) {
 			movieInfoModelListBuilder.title(row.get("title").toString())
 					.poster("https://image.tmdb.org/t/p/w342" + row.get("poster").toString())
+					.runtime(row.get("runtime").toString()).plot(row.get("plot").toString())
 					.release(row.get("release_date").toString());
 			movieInfoList.add(movieInfoModelListBuilder.build());
 		}
