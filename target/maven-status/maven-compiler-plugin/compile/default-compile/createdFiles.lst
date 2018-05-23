@@ -27,7 +27,6 @@ com/cinestop/model/ReviewRotTom$ReviewRotTomBuilder.class
 com/cinestop/model/GenreModel.class
 com/cinestop/model/MovieInfoModel.class
 com/cinestop/model/MediaInfoModel.class
-com/cinestop/controller/LandingPageController.class
 com/cinestop/controller/VotingController.class
 utilities/StringUtilities.class
 com/cinestop/model/ReviewRotTom.class

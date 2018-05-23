@@ -110,9 +110,12 @@ public class MovieInfoDaoImpl implements MovieInfoDao {
 	}
 
 	@Override
-	public List<MovieInfoModelList> getMovieInfoForListing(String queriedMovie) {
-		String query = "SELECT title,cinestopId,poster,release_date,plot,runtime FROM movie_data_primary where title like \"%"
-				+ queriedMovie + "%\" ORDER BY imdbRatings desc";
+	public List<MovieInfoModelList> getMovieInfoForListing(final String queriedMovie, final int fromPage,
+			final int toPage) {
+		String query = "select a.title,a.cinestopId,a.release_date,a.plot,a.runtime,a.poster,b.name from (select title,cinestopId,release_date,plot,runtime,imdbRatings,poster from movie_data_primary where title like \"%"
+				+ queriedMovie
+				+ "%\") as a inner join movie_crew as b on a.cinestopId=b.cinestopId  where b.job=\"director\" order by a.imdbRatings desc limit "
+				+ fromPage + "," + toPage;
 		final List<Map<String, Object>> rows = jdbcTemplate.queryForList(query);
 		MovieInfoModelListBuilder movieInfoModelListBuilder = MovieInfoModelList.builder();
 		List<MovieInfoModelList> movieInfoList = new ArrayList<>();
@@ -121,7 +124,7 @@ public class MovieInfoDaoImpl implements MovieInfoDao {
 			movieInfoModelListBuilder.title(row.get("title").toString())
 					.poster("https://image.tmdb.org/t/p/w342" + row.get("poster").toString())
 					.runtime(row.get("runtime").toString()).plot(row.get("plot").toString())
-					.release(row.get("release_date").toString());
+					.director(row.get("name").toString()).release(row.get("release_date").toString());
 			movieInfoList.add(movieInfoModelListBuilder.build());
 		}
 		return movieInfoList;

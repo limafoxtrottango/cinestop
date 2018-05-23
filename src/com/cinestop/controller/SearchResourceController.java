@@ -54,6 +54,7 @@ public class SearchResourceController {
 	@ResponseBody
 	@RequestMapping(method = RequestMethod.POST, value = "/searchMovie")
 	public List<MovieInfoModelList> displayMatchingMovies(@RequestBody final MovieQueryModel movieQuery) {
-		return movieInfoDaoImpl.getMovieInfoForListing(movieQuery.getTitle());
+		return movieInfoDaoImpl.getMovieInfoForListing(movieQuery.getTitle(), movieQuery.getFromPage(),
+				movieQuery.getToPage());
 	}
 }

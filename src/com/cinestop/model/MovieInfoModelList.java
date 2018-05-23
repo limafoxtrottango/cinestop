@@ -10,6 +10,7 @@ import lombok.Getter;
 public class MovieInfoModelList {
 	private String title;
 	private String cinestopId;
+	private String director;
 	private String poster;
 	private String plot;
 	private String runtime;

@@ -1,5 +1,11 @@
+var fromPage = 0;
+var toPage = 10;
+
 $(document).ready(function() {
+	 $('[data-toggle="tooltip"]').tooltip();
 	$("#searchbutton").click(function() {
+		fromPage = 0;
+		toPage = 10;
 		document.getElementById("movie-fetch-waiting").style.visibility = "visible";
 		document.getElementById("matching-movie-list-div").innerHTML = "";
 		$.ajax({
@@ -11,12 +17,53 @@ $(document).ready(function() {
 			success: matchingMoviesFetchSuccess,
 			failure: matchingMoviesFetchFailure
 		});
+		fromPage = fromPage + 10;
+		toPage = toPage + 10;
 	});
 });
+
+window.onscroll = function (e) {  
+	if(isElementVisible(document.getElementById('pagination-div'))) {
+			$.ajax({
+				type: "POST",
+				url: "/cinestop/searchMovie",
+				data: JSON.stringify(getQuery()),
+				contentType: "application/json",
+				dataType: "json",
+				success: matchingMoviesFetchSuccess,
+				failure: matchingMoviesFetchFailure
+			});
+			fromPage = fromPage + 10;
+			toPage = toPage + 10;
+	}
+} 
+
+function isElementVisible(el) {
+    var rect     = el.getBoundingClientRect(),
+        vWidth   = window.innerWidth || doc.documentElement.clientWidth,
+        vHeight  = window.innerHeight || doc.documentElement.clientHeight,
+        efp      = function (x, y) { return document.elementFromPoint(x, y) };     
+
+    // Return false if it's not in the viewport
+    if (rect.right < 0 || rect.bottom < 0 
+            || rect.left > vWidth || rect.top > vHeight)
+        return false;
+
+    // Return true if any of its four corners are visible
+    return (
+          el.contains(efp(rect.left,  rect.top))
+      ||  el.contains(efp(rect.right, rect.top))
+      ||  el.contains(efp(rect.right, rect.bottom))
+      ||  el.contains(efp(rect.left,  rect.bottom))
+    );
+}
+
 
 function getQuery() {
 	var obj = {}
 	obj["title"] = $("#home_searchMediaInputText").val();
+	obj["fromPage"] = fromPage;
+	obj["toPage"] = toPage;
 	return obj;
 }
 
@@ -76,6 +123,16 @@ function matchingMoviesFetchSuccess(response) {
 	    plot.append(plotText);
 	    
 	    media_body.append(plot);
+	    
+	    var director = document.createElement("p");
+	    director.style.fontFamily = "Laila";
+	    director.style.marginLeft = "10px";
+	    
+	    var directorText = document.createTextNode(data.director);
+	    
+	    director.append(directorText);
+	    
+	    media_body.append(director);
 	    
 	    media.append(media_body);
 	    

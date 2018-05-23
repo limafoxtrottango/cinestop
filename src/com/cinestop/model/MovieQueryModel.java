@@ -4,9 +4,9 @@ import lombok.Getter;
 
 @Getter
 public class MovieQueryModel {
-	public MovieQueryModel() {
-
-	}
-
+	private String type;
 	private String title;
+	private String year;
+	private int fromPage;
+	private int toPage;
 }

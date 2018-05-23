@@ -12,5 +12,5 @@ import com.cinestop.model.MovieInfoModelList;
  */
 public interface MovieInfoDao {
 	public MovieInfoModel getMovieInfo(final String cinestopId);
-	public List<MovieInfoModelList> getMovieInfoForListing(final String queriedMovie);
+	public List<MovieInfoModelList> getMovieInfoForListing(final String queriedMovie, final int fromPage, final int toPage);
 }

@@ -35,50 +35,55 @@
 		<div class="row">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-4">
-				<div class="container">
-					<div class="row">
-						<div class="input-group">
-							<input class="form-control bs-autocomplete"
-								id="home_searchMediaInputText" value=""
-								placeholder="Enter movie or T.V series name" type="text"
-								autocomplete="off">
-							<div class="input-group-append" style="margin-right: 5px">
-								<button class="btn btn-outline-secondary dropdown-toggle"
-									type="button" data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false">Movie</button>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#">Movie</a> <a
-										class="dropdown-item" href="#">T.V Series</a> <a
-										class="dropdown-item" href="#">All</a>
-								</div>
-							</div>
-							<button class="btn btn-info" type="submit" id="searchbutton">Search</button>
+				<div class="input-group">
+					<input class="form-control bs-autocomplete"
+						id="home_searchMediaInputText" value=""
+						placeholder="Enter movie or T.V series name" type="text"
+						autocomplete="off">
+					<div class="input-group-append" style="margin-right: 5px">
+						<button class="btn btn-outline-secondary dropdown-toggle"
+							type="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">Movie</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">Movie</a> 
+							<a class="dropdown-item" href="#">Documentary</a>
+							<a
+								class="dropdown-item" href="#">T.V Series</a> <a
+								class="dropdown-item" href="#">Person(s)</a>
 						</div>
 					</div>
+					<input
+						style="width: 10px; height: 40px; margin-left: 10px; margin-right: 10px"
+						class="form-control" data-toggle="tooltip"
+						title="Filters out any data that did not happen in this year"
+						type="text" id="year-text" placeholder="Year"
+						data-placement="left">
+					<button class="btn btn-info" type="submit" id="searchbutton">Search</button>
 				</div>
 			</div>
 			<div class="col-sm-3"></div>
 			<div class="col-sm-4">
-				<div class="container">
-					<div class="row">
-						<div class="input-group">
-							<input class="form-control" type="text" name='username'
-								id="username-home" placeholder="Username" data-toggle="popover"
-								data-placement="left"> <input class="form-control"
-								type="password" name='password' id="password-home"
-								placeholder="Password" data-toggle="popover"
-								data-placement="left">
-							<button id="login-home" class="btn btn-success" type="submit">Log
-								in</button>
-							<button id="signup-home" class="btn btn-success" type="submit">Sign
-								Up</button>
-						</div>
-					</div>
+				<div class="input-group">
+					<input class="form-control" type="text" name='username'
+						id="username-home" placeholder="Username" data-toggle="popover"
+						data-placement="left"> <input class="form-control"
+						type="password" name='password' id="password-home"
+						placeholder="Password" data-toggle="popover" data-placement="left">
+					<button id="login-home" class="btn btn-success" type="submit">Log
+						in</button>
+					<button id="signup-home" class="btn btn-success" type="submit">Sign
+						Up</button>
 				</div>
 			</div>
 		</div>
 		<hr>
 		<div class="row">
+			<div id="exact-toggle"
+				style="width: 60px; margin-left: 10px; margin-right: 10px">
+				<input type="checkbox" checked data-toggle="toggle"> <label
+					style="font-family: 'Laila'">Exact </label>
+			</div>
+			<
 			<div id="netflix-toggle"
 				style="width: 60px; margin-left: 10px; margin-right: 10px">
 				<input type="checkbox" checked data-toggle="toggle"> <label
@@ -99,6 +104,7 @@
 				<input type="checkbox" checked data-toggle="toggle"> <label
 					style="font-family: 'Laila'">Hulu </label>
 			</div>
+
 			<div id="genre-dropdown"
 				style="width: 80px; margin-left: 10px; margin-right: 10px">
 				<div class="dropdown">
@@ -144,5 +150,12 @@
 			<div id="matching-movie-list-div"></div>
 		</div>
 	</div>
+	<div id="pagination-div">
+		lkfjaslkfjalfjslgjlkgjaslgkajgklajglkjgaklgjaklgjalkgjagjalkgaj
+		lkfjaslkfjalfjslgjlkgjaslgkajgklajglkjgaklgjaklgjalkgjagjalkgaj
+		lkfjaslkfjalfjslgjlkgjaslgkajgklajglkjgaklgjaklgjalkgjagjalkgaj
+		lkfjaslkfjalfjslgjlkgjaslgkajgklajglkjgaklgjaklgjalkgjagjalkgaj
+		lkfjaslkfjalfjslgjlkgjaslgkajgklajglkjgaklgjaklgjalkgjagjalkgaj
+		lkfjaslkfjalfjslgjlkgjaslgkajgklajglkjgaklgjaklgjalkgjagjalkgaj</div>
 </body>
 </html>
